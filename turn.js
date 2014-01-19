@@ -19,10 +19,10 @@ var has3d,
 
 	A90 = PI/2,
 
-	isTouch = 'Touch' in window,
+    isTouch = 'ontouchstart' in document.documentElement,
 
-	events = (isTouch) ? {start: 'touchstart', move: 'touchmove', end: 'touchend'}
-			: {start: 'mousedown', move: 'mousemove', end: 'mouseup'},
+    events = (isTouch) ? {start: 'touchstart mousedown', move: 'touchmove mousemove', end: 'touchend mouseup'}
+        : {start: 'mousedown', move: 'mousemove', end: 'mouseup'},
 
 	// Contansts used for each corner
 	// tl * tr
