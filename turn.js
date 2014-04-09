@@ -1239,7 +1239,7 @@ flipMethods = {
 			return false;
 		}
 
-		e = (isTouch) ? (e.originalEvent.touches===undefined) ? [e] : e.originalEvent.touches : [e];
+		e = (isTouch && e.originalEvent.touches) ? e.originalEvent.touches : [e];
 
 		var data = this.data().f,
 			pos = data.parent.offset(),
@@ -1786,7 +1786,7 @@ flipMethods = {
 		var data = this.data().f;
 
 		if (!data.disabled) {
-			e = (isTouch) ? (e.originalEvent.touches===undefined) ? [e] : e.originalEvent.touches : [e];
+			e = (isTouch && e.originalEvent.touches) ? e.originalEvent.touches : [e];
 
 			if (data.corner) {
 
