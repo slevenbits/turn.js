@@ -1029,7 +1029,8 @@ turnMethods = {
 			turn.turn('update');
 		}
 
-	},
+        opts.turn.trigger($.Event('end'), [opts, turned]);
+    },
 
 	// This event is called in context of flip
 
@@ -1807,7 +1808,6 @@ flipMethods = {
 					flipMethods._showFoldedPage.call(this, corner, true);
 				} else
 					flipMethods.hideFoldedPage.call(this, true);
-
 			}
 		}
 	},
